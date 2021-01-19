@@ -1,6 +1,7 @@
 public class Body {
 
     public static double G = 6.67e-11;
+    public static String IMAGE_PATH = "images/";
     public double xxPos;
     public double yyPos;
     public double xxVel;
@@ -126,6 +127,10 @@ public class Body {
         return Body.checkIfEqual(this, b);
     }
     
+    public void draw()
+    {
+        StdDraw.picture(this.xxPos, this.yyPos, IMAGE_PATH + this.imgFileName);
+    }
 }
 
 
