@@ -41,43 +41,42 @@ public class Percolation {
         openSites[centerIndex] = true;
         openSitesCount += 1;
 
-        //check if is full?
         int leftIndex = col == 0 ? -1 : row * gridSize + col - 1;
         int rightIndex = col == gridSize - 1 ? -1 : row * gridSize + col + 1;
         int topIndex = row == 0 ? -1 : (row - 1) * gridSize + col;
         int bottomIndex = row == gridSize - 1 ? -1 : (row + 1) * gridSize + col;
         if (leftIndex >= 0 && isOpen(row, col - 1)) {
-            if (connect2Top[sitesUnion.find(leftIndex)] || connect2Top[sitesUnion.find(centerIndex)]) {
+            if (connect2Top[sitesUnion.find(leftIndex)]) {
                 connectedUnion2Top = true;
             }
-            if (connect2Bottom[sitesUnion.find(leftIndex)] || connect2Bottom[sitesUnion.find(centerIndex)]) {
+            if (connect2Bottom[sitesUnion.find(leftIndex)]) {
                 connectedUnion2Bottom = true;
             }
             sitesUnion.union(leftIndex, centerIndex);
         }
         if (rightIndex >= 0 && isOpen(row, col + 1)) {
-            if (connect2Top[sitesUnion.find(rightIndex)] || connect2Top[sitesUnion.find(centerIndex)]) {
+            if (connect2Top[sitesUnion.find(rightIndex)]) {
                 connectedUnion2Top = true;
             }
-            if (connect2Bottom[sitesUnion.find(rightIndex)] || connect2Bottom[sitesUnion.find(centerIndex)]) {
+            if (connect2Bottom[sitesUnion.find(rightIndex)]) {
                 connectedUnion2Bottom = true;
             }
             sitesUnion.union(rightIndex, centerIndex);
         }
         if (topIndex >= 0 && isOpen(row - 1, col)) {
-            if (connect2Top[sitesUnion.find(topIndex)] || connect2Top[sitesUnion.find(centerIndex)]) {
+            if (connect2Top[sitesUnion.find(topIndex)]) {
                 connectedUnion2Top = true;
             }
-            if (connect2Bottom[sitesUnion.find(topIndex)] || connect2Bottom[sitesUnion.find(centerIndex)]) {
+            if (connect2Bottom[sitesUnion.find(topIndex)]) {
                 connectedUnion2Bottom = true;
             }
             sitesUnion.union(topIndex, centerIndex);
         }
         if (bottomIndex >= 0 && isOpen(row + 1, col)) {
-            if (connect2Top[sitesUnion.find(bottomIndex)] || connect2Top[sitesUnion.find(centerIndex)]) {
+            if (connect2Top[sitesUnion.find(bottomIndex)]) {
                 connectedUnion2Top = true;
             }
-            if (connect2Bottom[sitesUnion.find(bottomIndex)] || connect2Bottom[sitesUnion.find(centerIndex)]) {
+            if (connect2Bottom[sitesUnion.find(bottomIndex)]) {
                 connectedUnion2Bottom = true;
             }
             sitesUnion.union(bottomIndex, centerIndex);
