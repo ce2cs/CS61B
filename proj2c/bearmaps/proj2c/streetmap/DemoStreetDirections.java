@@ -1,6 +1,7 @@
 package bearmaps.proj2c.streetmap;
 
 import bearmaps.proj2c.AStarSolver;
+import bearmaps.proj2c.LazySolver;
 import bearmaps.proj2c.SolutionPrinter;
 
 /**
@@ -12,7 +13,7 @@ import bearmaps.proj2c.SolutionPrinter;
  */
 public class DemoStreetDirections {
     public static void main(String[] args) {
-        StreetMapGraph smg = StreetMapGraph.readFromSimpleFormat("berkeley-street-data.simple");
+        StreetMapGraph smg = StreetMapGraph.readFromSimpleFormat("./bearmaps/proj2c/input/berkeley-street-data.simple");
         AStarSolver<Long> solver = new AStarSolver<>(smg, 2793619975L, 2793619967L, 5);
         SolutionPrinter.summarizeSolution(solver, "->");
     }

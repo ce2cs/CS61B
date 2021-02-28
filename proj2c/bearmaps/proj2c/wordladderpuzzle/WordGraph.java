@@ -19,7 +19,7 @@ import java.util.Set;
  */
 public class WordGraph implements AStarGraph<String> {
     private Set<String> words;
-    private static final String WORDFILE = "words10000.txt";
+    private static final String WORDFILE = "bearmaps/proj2c/input/words10000.txt";
 
     /**
      * Reads the wordfile specified by the wordfile variable.
